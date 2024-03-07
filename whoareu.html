@@ -1,0 +1,67 @@
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico"/>
+    <title>성염인형극연구회</title>
+</head>
+<style>
+    @font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+    body{
+        background-color: black;
+    }
+    #title{
+        color: brown;
+        font-family: 'BookkMyungjo-Bd';
+        text-align: center;
+    }
+    #input, #form{
+        color:crimson;
+        font-family: 'BookkMyungjo-Bd';
+        text-align: center;
+    }
+    #Btn{
+        background-color: crimson;
+        color: antiquewhite;
+        font-family: 'BookkMyungjo-Bd';
+    }
+</style>
+<body>
+    <hr color="brown" />
+    <div id = "title">안녕하세요. 성염인형극연구회입니다.</div>
+    <hr color="brown" />
+    <div id = "title">Q: 귀하의 이름은 무엇입니까?</div>
+    <br>
+    <form id="form">
+        <input type="text" id = "input">
+        <button id="Btn">확인</button>
+    </form>
+
+</body>
+<script>
+    const $form = document.querySelector('#form');
+    const $input = document.querySelector('#input');
+
+    function checkName(name){
+        if(name != "이성염")
+          return confirm('연구회 회원이 아닙니다. 그래도 방문하시겠습니까?');
+        return true;
+    }
+
+    $form.addEventListener('submit', (event)=>{
+        event.preventDefault();
+        const value = $input.value;
+        $input.value = '';
+        const mainPage = './mainPage.html';
+        if(checkName(value)){
+            window.location.replace(mainPage);
+        }
+
+    })
+</script>
+</html>
