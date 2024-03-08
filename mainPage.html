@@ -58,6 +58,10 @@
     #hide{
         color: black;
     }
+    #경고{
+        color: white;
+        font-family: 궁서;
+    }
 </style>
 <body>
     
@@ -74,7 +78,7 @@
             <div class = "con">
                 <nav class ="menubar text-align-center con">
                     <ul class = "inline-grid">
-                        <li><a href="mainPage.html" class="block">Home</a></li>
+                        <li><a href="mainPage.html" class="block" >Home</a></li>
                         <li><a href="introDoll.html" class="block">단체소개</a></li>
                         <li><a href="rule.html" class="block">연구규칙</a></li>
                         <li><a href="joinTeam.html" class="block">가입신청</a></li>
@@ -86,11 +90,18 @@
     </header>
     꿈과 희망이 넘치는 <strong>성염인형극연구회</strong>입니다.<span id="hide">어었있도게에이염성리우</span>
     <br>
+    <div id="경고"></div>
     <hr>
     <img src="./dollImg.jpg" alt="MainPageImage" style="max-width: 100%; height: auto;" title="다니습찾 군염성이">
     *위의 사진 이미지는 본 연구회와 무관합니다.<span id="hide">어싶고보아염성</span>
+    
 </body>
 <script>
-
+const $hide = document.querySelector('#hide');
+const $경고 = document.querySelector('#경고');
+const alertText = '경고!: 의미없는 움직임이 계속 반복될 경우 즉각 처벌할 수 있습니다\n';
+$hide.addEventListener('mouseover', (event)=>{
+    $경고.append(alertText, document.createElement('br'));
+})
 </script>
 </html>
